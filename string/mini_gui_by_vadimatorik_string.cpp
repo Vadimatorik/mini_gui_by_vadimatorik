@@ -1,6 +1,6 @@
 #include "mini_gui_by_vadimatorik_string.h"
 
-uint32_t mini_gui_by_vadimatorik_string_get_width ( font_t *font, char* const string ) {
+uint32_t mini_gui_by_vadimatorik_string_get_width ( const font_t* const font, char* const string ) {
     uint32_t x_point = 0;
     uint8_t loop_char = 0;
     while( ( string[loop_char] != 0 ) && ( string[loop_char] != '\n' ) ) {
