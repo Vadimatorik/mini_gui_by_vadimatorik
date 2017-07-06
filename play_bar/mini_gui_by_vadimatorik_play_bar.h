@@ -1,8 +1,8 @@
 #pragma once
 
 #include <stdint.h>
-#include "mini_gui_by_vadimatorik_status_bar.h"
 #include "mini_gui_by_vadimatorik_font_struct.h"
+#include "mini_gui_by_vadimatorik_status_bar.h"
 /*
 #ifdef LCD_TFT	// В случае, если используется цветной LCD.
     uint16_t (*rgbColor) (uint8_t, uint8_t, uint8_t);	// Отправляем R, G, B цвета по 8 бит на цвет, получаем 16-ти битное значение.
@@ -47,5 +47,5 @@ private:
     mutable uint32_t time_all = 0;          // Общее время.
 
 
-    float status;
+    float status = false;
 };
