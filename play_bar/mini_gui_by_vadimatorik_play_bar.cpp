@@ -41,7 +41,7 @@ void mini_gui_by_vadimatorik_lcd_mono_play_bar::fill_area ( void ) const {
 void mini_gui_by_vadimatorik_lcd_mono_play_bar::update ( void ) const {
     this->status = (float)((float)this->time_up_sec/(float)this->time_all);
     this->cfg->status_bar_obj->reset( this->status );			// Перерисовываем полосу загрузки.
-    this->fill_area();		// Затираем старое.
+  //  this->fill_area();		// Затираем старое.
     mini_gui_by_vadimatorik_convert_sec_to_string(this->time_up_sec, this->time_up);					// Преобразовываем прошедшее.
     mini_gui_by_vadimatorik_convert_sec_to_string(this->time_all - this->time_up_sec, this->time_down);	// Преобразовываем оставшееся.
     this->print_time();		// Рисуем.
