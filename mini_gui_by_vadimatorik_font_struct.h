@@ -1,4 +1,5 @@
 #pragma once
+#include <stdint.h>
 
 struct image_t {
     const uint8_t*    const p_array;

@@ -2,14 +2,14 @@
 #include <cstring>
 
 // + секунда ко времени.
-void mini_gui_by_vadimatorik_play_bar::inc_sec ( void ) const {
+void mini_gui_by_vadimatorik_lcd_mono_play_bar::inc_sec ( void ) const {
     if (this->time_up_sec < this->time_all){
         this->time_up_sec++;
         this->update();
     };
 }
 
-void mini_gui_by_vadimatorik_play_bar::print_time ( void ) const {
+void mini_gui_by_vadimatorik_lcd_mono_play_bar::print_time ( void ) const {
     this->cfg->print_string( *this->cfg->time_up_font,
                             this->cfg->spase, this->cfg->y_time,
                             this->time_up,
@@ -29,7 +29,7 @@ void mini_gui_by_vadimatorik_play_bar::print_time ( void ) const {
 }
 
 // Заливаем область старых часов фоном.
-void mini_gui_by_vadimatorik_play_bar::fill_area ( void ) const {
+void mini_gui_by_vadimatorik_lcd_mono_play_bar::fill_area ( void ) const {
     uint32_t width;
     width = mini_gui_by_vadimatorik_string_get_width(this->cfg->time_up_font, this->time_up);
     this->cfg->fill_rect( this->cfg->spase, this->cfg->y_time, this->cfg->spase+width, this->cfg->y_time + this->cfg->time_up_font->chars[0].image->size, 0);
@@ -38,7 +38,7 @@ void mini_gui_by_vadimatorik_play_bar::fill_area ( void ) const {
 }
 
 // Перерисовываем все.
-void mini_gui_by_vadimatorik_play_bar::update ( void ) const {
+void mini_gui_by_vadimatorik_lcd_mono_play_bar::update ( void ) const {
     this->status = (float)((float)this->time_up_sec/(float)this->time_all);
     this->cfg->status_bar_obj->reset( this->status );			// Перерисовываем полосу загрузки.
     this->fill_area();		// Затираем старое.
@@ -48,14 +48,14 @@ void mini_gui_by_vadimatorik_play_bar::update ( void ) const {
 }
 
 // Общее время другое (новая мелодия)
-void    mini_gui_by_vadimatorik_play_bar::set_new_up_time     ( uint32_t value ) const {
+void    mini_gui_by_vadimatorik_lcd_mono_play_bar::set_new_up_time     ( uint32_t value ) const {
     this->time_all = value;	// С начала.
     this->time_up_sec = 0;
     this->update();
 }
 
 // Сбрасываем в 0 время и статус бар.
- void    mini_gui_by_vadimatorik_play_bar::reset              ( void ) const {
+ void    mini_gui_by_vadimatorik_lcd_mono_play_bar::reset              ( void ) const {
     strcpy(this->time_down, "00:00");	// Начальное значение обязано быть. Для очистки.
     strcpy(this->time_up, "00:00");
     this->time_all = 0;

@@ -16,9 +16,9 @@ struct mini_gui_by_vadimatorik_status_bar_mono_cfg_t {
     void (*draw_frame)( const uint8_t& x, const uint8_t& y, const uint8_t& width, const uint8_t& height, const uint8_t& thickness, const bool& color );
 };
 
-class mini_gui_by_vadimatorik_status_bar_mono {
+class mini_gui_by_vadimatorik_lcd_mono_status_bar {
 public:
-    constexpr mini_gui_by_vadimatorik_status_bar_mono( const mini_gui_by_vadimatorik_status_bar_mono_cfg_t* const cfg ) : cfg(cfg) {}
+    constexpr mini_gui_by_vadimatorik_lcd_mono_status_bar( const mini_gui_by_vadimatorik_status_bar_mono_cfg_t* const cfg ) : cfg(cfg) {}
     void reset  ( const float& filling_percentage ) const;
     void update ( const float& filling_percentage ) const;
 

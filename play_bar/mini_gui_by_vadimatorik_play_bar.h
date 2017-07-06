@@ -8,7 +8,7 @@
 
 // Работаем с "плагином" воспроизведения.
 struct gui_play_bar_init_cfg_t {
-    const mini_gui_by_vadimatorik_status_bar_mono* const status_bar_obj;		// Плагин использует статус бар.
+    const mini_gui_by_vadimatorik_lcd_mono_status_bar* const status_bar_obj;		// Плагин использует статус бар.
 
     void ( *print_string ) ( const font_t& font, uint8_t x, uint8_t y, char *string, const bool& color, const bool& rle );
     void ( *fill_rect )    ( uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, const bool& color );	// Для рисовки окаимления.
@@ -25,9 +25,9 @@ struct gui_play_bar_init_cfg_t {
 
 
 
-class mini_gui_by_vadimatorik_play_bar {
+class mini_gui_by_vadimatorik_lcd_mono_play_bar {
 public:
-    constexpr mini_gui_by_vadimatorik_play_bar( const gui_play_bar_init_cfg_t* const cfg ) : cfg(cfg) {}
+    constexpr mini_gui_by_vadimatorik_lcd_mono_play_bar( const gui_play_bar_init_cfg_t* const cfg ) : cfg(cfg) {}
     void    update              ( void ) const;         // Рисуем в буфер.
     void    set_new_up_time     ( uint32_t value ) const;
     void    reset              ( void ) const;               // Сбрасываем в 0 время и статус бар.
